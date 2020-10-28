@@ -5,26 +5,14 @@ import { HeroDetailComponent } from './hero-detail/hero-detail.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 const routes: Routes = [
-  {
-    path: '',
-    component: DashboardComponent
-  },
-  {
-    path: 'heroes',
-    component: HeroesComponent
-  },
-  {
-    path: 'dashboard',
-    component: DashboardComponent
-  },
-  {
-    path: 'detail/:id',
-    component: HeroDetailComponent
-  }
+    { path: '', component: DashboardComponent },            // 默认展示
+    { path: 'dashboard', component: DashboardComponent },   // 仪表盘
+    { path: 'heroes', component: HeroesComponent },         // 英雄列表
+    { path: 'detail/:id', component: HeroDetailComponent }  // 英雄详情
 ];
 
 @NgModule({
-  imports: [RouterModule.forRoot(routes)],
-  exports: [RouterModule]
+    imports: [RouterModule.forRoot(routes)],
+    exports: [RouterModule]
 })
 export class AppRoutingModule { }

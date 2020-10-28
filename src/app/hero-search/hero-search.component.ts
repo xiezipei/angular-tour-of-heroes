@@ -1,18 +1,13 @@
 import { Component, OnInit } from '@angular/core';
-
 import { Observable, Subject } from 'rxjs';
-
-import {
-   debounceTime, distinctUntilChanged, switchMap
- } from 'rxjs/operators';
-
+import { debounceTime, distinctUntilChanged, switchMap } from 'rxjs/operators';
 import { Hero } from '../Hero';
 import { HeroService } from '../hero.service';
 
 @Component({
   selector: 'app-hero-search',
   templateUrl: './hero-search.component.html',
-  styleUrls: [ './hero-search.component.scss' ]
+  styleUrls: ['./hero-search.component.scss']
 })
 export class HeroSearchComponent implements OnInit {
   heroes$: Observable<Hero[]>;
@@ -20,7 +15,7 @@ export class HeroSearchComponent implements OnInit {
   // Subject 既是可观察对象的数据源，本身也是 Observable。 你可以像订阅任何 Observable 一样订阅 Subject。
   private searchTerms = new Subject<string>();
 
-  constructor(private heroService: HeroService) {}
+  constructor(private heroService: HeroService) { }
 
   // Push a search term into the observable stream.
   search(term: string): void {

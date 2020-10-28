@@ -22,15 +22,24 @@ export class HeroDetailComponent implements OnInit {
     this.getHero();
   }
 
+  /**
+   * 获取英雄详情
+   */
   getHero(): void {
     const id = +this.route.snapshot.paramMap.get('id');
     this.heroService.getHero(id).subscribe(hero => this.hero = hero);
   }
 
+  /**
+   * 导航回到上一个视图
+   */
   goBack(): void {
-    this.location.back(); // 导航回到上一个视图
+    this.location.back();
   }
 
+  /**
+   * 保存修改
+   */
   save(): void {
     this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
   }

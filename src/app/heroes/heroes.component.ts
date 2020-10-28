@@ -10,7 +10,7 @@ import { MessageService } from '../message.service';
     styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-    selectedHero: Hero;
+    // selectedHero: Hero;
     heroes: Hero[];
 
     constructor(
@@ -26,10 +26,10 @@ export class HeroesComponent implements OnInit {
      * 获取选中的英雄
      * @param hero 选中英雄对象
      */
-    onSelected(hero: Hero): void {
-        this.selectedHero = hero;
-        this.messageService.add(`HeroesComponent: Selected hero id=$${hero.id}`);
-    }
+    // onSelected(hero: Hero): void {
+    //     this.selectedHero = hero;
+    //     this.messageService.add(`HeroesComponent: Selected hero id=$${hero.id}`);
+    // }
 
     /**
      * 获取英雄列表

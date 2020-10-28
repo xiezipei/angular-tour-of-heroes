@@ -1,5 +1,12 @@
-<button (click)="goBack()">返回</button>
-<button (click)="save()">保存</button>
+<nz-space>
+    <nz-space-item>
+        <button nz-button nzType="default" (click)="goBack()">返回</button>
+    </nz-space-item>
+    <nz-space-item>
+        <button nz-button nzType="primary" (click)="save()">保存</button>
+    </nz-space-item>
+</nz-space>
+
 <div *ngIf="hero">
     <h2>{{ hero.name | uppercase }} Details</h2>
     <div><span>id: </span>{{ hero.id }}</div>

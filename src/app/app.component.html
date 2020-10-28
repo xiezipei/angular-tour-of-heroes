@@ -1,7 +1,12 @@
 <h1>{{ title }}</h1>
-<nav>
-    <a routerLink="/dashboard">仪表盘</a>
-    <a routerLink="/heroes">英雄列表</a>
-</nav>
+<ul nz-menu nzMode="horizontal">
+    <li nz-menu-item routerLink="/dashboard" nzSelected>
+        <i nz-icon nzType="pie-chart" nzTheme="outline"></i>仪表盘
+    </li>
+    <li nz-menu-item routerLink="/heroes">
+        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>英雄列表
+    </li>
+</ul>
+
 <router-outlet></router-outlet>
 <app-messages></app-messages>

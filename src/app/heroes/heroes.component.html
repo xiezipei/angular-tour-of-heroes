@@ -5,7 +5,7 @@
     <label>Hero name:
         <input #heroName>
     </label>
-    <button (click)="add(heroName.value);heroName.value=''">新增</button>
+    <button nz-button nzType="primary" (click)="add(heroName.value);heroName.value=''">新增</button>
 </div>
 
 <ul class="heroes">
@@ -13,9 +13,7 @@
         <span class="badge">{{hero.id}}</span> {{hero.name}}
     </li> -->
     <li *ngFor="let hero of heroes">
-        <a routerLink="/detail/{{ hero.id }}">
-            <span class="badge">{{hero.id}}</span> {{hero.name}}
-        </a>
-        <button class="delete" title="delete hero" (click)="delete(hero)">删除</button>
+        <a routerLink="/detail/{{ hero.id }}"><span class="badge">{{hero.id}}</span> {{hero.name}}</a>
+        <a nz-button nzType="link" nzDanger (click)="delete(hero)">×</a>
     </li>
 </ul>

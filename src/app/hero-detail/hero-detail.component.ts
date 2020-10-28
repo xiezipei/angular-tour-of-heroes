@@ -30,4 +30,8 @@ export class HeroDetailComponent implements OnInit {
   goBack(): void {
     this.location.back(); // 导航回到上一个视图
   }
+
+  save(): void {
+    this.heroService.updateHero(this.hero).subscribe(() => this.goBack());
+  }
 }

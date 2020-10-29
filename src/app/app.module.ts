@@ -55,6 +55,9 @@ import { NzListModule } from 'ng-zorro-antd/list';
 // 11. 分割线
 import { NzDividerModule } from 'ng-zorro-antd/divider';
 
+// 12. 表格
+import { NzTableModule } from 'ng-zorro-antd/table';
+
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -90,6 +93,7 @@ registerLocaleData(zh);
     NzInputModule,
     NzListModule,
     NzDividerModule,
+    NzTableModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

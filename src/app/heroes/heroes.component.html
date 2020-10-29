@@ -15,12 +15,25 @@
     <!-- 新增 e -->
     <nz-divider></nz-divider>
     <!-- 列表 s -->
-    <ul class="heroes">
-        <li *ngFor="let hero of heroes">
-            <a routerLink="/heroes/detail/{{ hero.id }}"><span class="badge">{{hero.id}}</span> {{hero.name}}</a>
-            <a nz-button nzType="link" nzDanger (click)="delete(hero)">×</a>
-        </li>
-    </ul>
+    <nz-table #heroesTable nzBordered [nzData]="heroes">
+        <thead>
+            <tr>
+                <th nzWidth="10%">序号</th>
+                <th nzWidth="70%">英雄名称</th>
+                <th nzWidth="20%">操作</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of heroesTable.data">
+                <td>{{ item.id }}</td>
+                <td>{{ item.name }}</td>
+                <td>
+                    <a nz-button nzType="link" routerLink="/heroes/detail/{{ item.id }}">查看</a>
+                    <a nz-button nzType="link" nzDanger (click)="delete(item)">删除</a>
+                </td>
+            </tr>
+        </tbody>
+    </nz-table>
     <!-- 列表 e -->
 </div>
 <!-- 主体 e -->

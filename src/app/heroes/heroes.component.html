@@ -1,21 +1,26 @@
 <!-- 页头 s -->
 <nz-page-header nzTitle="英雄列表" nzSubtitle="所有英雄展示"></nz-page-header>
 <!-- 页头 e -->
-
-<!-- add -->
-<div>
-    <label>Hero name:
-        <input #heroName>
-    </label>
-    <button nz-button nzType="primary" (click)="add(heroName.value);heroName.value=''">新增</button>
+<!-- 主体 s -->
+<div class="container">
+    <!-- 新增 s -->
+    <nz-space>
+        <nz-space-item>
+            <input nz-input #heroName placeholder="请输入英雄名称">
+        </nz-space-item>
+        <nz-space-item>
+            <button nz-button nzType="primary" (click)="add(heroName.value);heroName.value=''">新增</button>
+        </nz-space-item>
+    </nz-space>
+    <!-- 新增 e -->
+    <nz-divider></nz-divider>
+    <!-- 列表 s -->
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes">
+            <a routerLink="/heroes/detail/{{ hero.id }}"><span class="badge">{{hero.id}}</span> {{hero.name}}</a>
+            <a nz-button nzType="link" nzDanger (click)="delete(hero)">×</a>
+        </li>
+    </ul>
+    <!-- 列表 e -->
 </div>
-
-<ul class="heroes">
-    <!-- <li *ngFor="let hero of heroes" [class.selected]="hero === selectedHero" (click)="onSelected(hero)">
-        <span class="badge">{{hero.id}}</span> {{hero.name}}
-    </li> -->
-    <li *ngFor="let hero of heroes">
-        <a routerLink="/heroes/detail/{{ hero.id }}"><span class="badge">{{hero.id}}</span> {{hero.name}}</a>
-        <a nz-button nzType="link" nzDanger (click)="delete(hero)">×</a>
-    </li>
-</ul>
+<!-- 主体 e -->

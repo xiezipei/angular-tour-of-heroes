@@ -1,12 +1,32 @@
-<h1>{{ title }}</h1>
-<ul nz-menu nzMode="horizontal">
-    <li nz-menu-item routerLink="/dashboard" nzSelected>
-        <i nz-icon nzType="pie-chart" nzTheme="outline"></i>仪表盘
-    </li>
-    <li nz-menu-item routerLink="/heroes">
-        <i nz-icon nzType="unordered-list" nzTheme="outline"></i>英雄列表
-    </li>
-</ul>
-
-<router-outlet></router-outlet>
-<app-messages></app-messages>
+<nz-layout class="layout">
+    <!-- 顶部导航栏 s -->
+    <nz-header>
+        <div class="title">{{ title }}</div>
+        <ul nz-menu nzTheme="dark" nzMode="horizontal">
+            <li nz-menu-item routerLink="/dashboard" nzSelected>仪表盘</li>
+            <li nz-menu-item routerLink="/heroes">英雄列表</li>
+        </ul>
+    </nz-header>
+    <!-- 顶部导航栏 e -->
+    <!-- 面包屑 s -->
+    <!-- <nz-breadcrumb [nzSeparator]="null">
+        <nz-breadcrumb-item>位置</nz-breadcrumb-item>
+        <nz-breadcrumb-separator>:</nz-breadcrumb-separator>
+        <nz-breadcrumb-item><a>Application Center</a></nz-breadcrumb-item>
+        <nz-breadcrumb-separator>/</nz-breadcrumb-separator>
+        <nz-breadcrumb-item>Application List</nz-breadcrumb-item>
+    </nz-breadcrumb> -->
+    <nz-breadcrumb [nzAutoGenerate]="true"></nz-breadcrumb>
+    <!-- 面包屑 e -->
+    <!-- 主体内容 s -->
+    <nz-content>
+        <div class="inner-content">
+            <router-outlet></router-outlet>
+            <app-messages></app-messages>
+        </div>
+    </nz-content>
+    <!-- 主体内容 e -->
+    <!-- 页脚 s -->
+    <nz-footer>Power by <i>Angular</i> & <i>NG-ZORRO</i></nz-footer>
+    <!-- 页脚 e -->
+</nz-layout>

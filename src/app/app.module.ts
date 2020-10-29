@@ -4,14 +4,11 @@ import { HttpClientModule } from '@angular/common/http';
 import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { FormsModule } from '@angular/forms';
-import { HeroDetailComponent } from './hero-detail/hero-detail.component';
-import { MessagesComponent } from './messages/messages.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
-// 模拟数据服务器
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService } from './in-memory-data.service';
-import { HeroSearchComponent } from './hero-search/hero-search.component';
+
+// 引入ng-zorro
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { registerLocaleData } from '@angular/common';
+import zh from '@angular/common/locales/zh';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 
@@ -40,8 +37,18 @@ import { NzSpaceModule } from 'ng-zorro-antd/space';
 // 布局
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
-import { registerLocaleData } from '@angular/common';
-import zh from '@angular/common/locales/zh';
+// 面包屑
+import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+
+// 模拟数据服务器
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService } from './in-memory-data.service';
+
+// 自定义组件
+import { HeroDetailComponent } from './hero-detail/hero-detail.component';
+import { MessagesComponent } from './messages/messages.component';
+import { DashboardComponent } from './dashboard/dashboard.component';
+import { HeroSearchComponent } from './hero-search/hero-search.component';
 import { HeroesComponent } from './heroes/heroes.component';
 
 registerLocaleData(zh);
@@ -62,6 +69,7 @@ registerLocaleData(zh);
     NzIconModule.forRoot(icons),
     NzSpaceModule,
     NzLayoutModule,
+    NzBreadCrumbModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

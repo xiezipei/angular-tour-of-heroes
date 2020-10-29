@@ -17,7 +17,6 @@ export class AppComponent {
   ) {
     this.subscription = this.router.events.subscribe((event) => {
       if (event instanceof NavigationEnd) {
-        // this.init();
         console.log(event);
       }
     });

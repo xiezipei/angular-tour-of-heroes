@@ -43,6 +43,15 @@ import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
 // 7. 页头
 import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
+// 8. 走马灯
+import { NzCarouselModule } from 'ng-zorro-antd/carousel';
+
+// 9. 输入框
+import { NzInputModule } from 'ng-zorro-antd/input';
+
+// 10. 列表
+import { NzListModule } from 'ng-zorro-antd/list';
+
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -74,6 +83,9 @@ registerLocaleData(zh);
     NzLayoutModule,
     NzBreadCrumbModule,
     NzPageHeaderModule,
+    NzCarouselModule,
+    NzInputModule,
+    NzListModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

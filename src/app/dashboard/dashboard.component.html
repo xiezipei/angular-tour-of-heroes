@@ -1,11 +1,15 @@
 <!-- 页头 s -->
 <nz-page-header nzTitle="英雄排行榜" nzSubtitle="排名前列的英雄"></nz-page-header>
 <!-- 页头 e -->
-<div class="grid grid-pad">
-    <a *ngFor="let hero of heroes" class="col-1-4" routerLink="/heroes/detail/{{ hero.id }}">
-        <div class="module hero">
-            <h4>{{ hero.name }}</h4>
+<!-- 主体 s -->
+<div class="container">
+    <nz-carousel nzAutoPlay>
+        <div nz-carousel-content *ngFor="let hero of heroes" routerLink="/heroes/detail/{{ hero.id }}">
+            <h3>{{ hero.name }}</h3>
         </div>
-    </a>
+    </nz-carousel>
+    <!-- 搜索组件 s -->
+    <app-hero-search></app-hero-search>
+    <!-- 搜索组件 e -->
 </div>
-<app-hero-search></app-hero-search>
+<!-- 主体 e -->

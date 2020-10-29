@@ -28,8 +28,8 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 // };
 // const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
 // 按需引入（推荐）
-import { PieChartOutline, UnorderedListOutline } from '@ant-design/icons-angular/icons';
-const icons: IconDefinition[] = [PieChartOutline, UnorderedListOutline];
+import { PieChartOutline, UnorderedListOutline, ArrowLeftOutline } from '@ant-design/icons-angular/icons';
+const icons: IconDefinition[] = [PieChartOutline, UnorderedListOutline, ArrowLeftOutline];
 
 // 4. 间距
 import { NzSpaceModule } from 'ng-zorro-antd/space';
@@ -60,6 +60,9 @@ import { NzTableModule } from 'ng-zorro-antd/table';
 
 // 13. 加载中
 import { NzSpinModule } from 'ng-zorro-antd/spin';
+
+// 14. 全局提示
+import { NzMessageModule } from 'ng-zorro-antd/message';
 
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -98,6 +101,7 @@ registerLocaleData(zh);
         NzDividerModule,
         NzTableModule,
         NzSpinModule,
+        NzMessageModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,

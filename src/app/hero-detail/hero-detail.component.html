@@ -1,22 +1,23 @@
 <!-- 页头 s -->
-<nz-page-header nzTitle="英雄详情" nzSubtitle="展示英雄详细信息"></nz-page-header>
-<!-- 页头 e -->
-
-<nz-space>
-    <nz-space-item>
-        <button nz-button nzType="default" (click)="goBack()">返回</button>
-    </nz-space-item>
-    <nz-space-item>
+<nz-page-header (nzBack)="goBack()" nzBackIcon>
+    <nz-page-header-title>英雄详情</nz-page-header-title>
+    <nz-page-header-subtitle>展示英雄详细信息</nz-page-header-subtitle>
+    <nz-page-header-extra>
+        <button nz-button (click)="goBack()">返回</button>
         <button nz-button nzType="primary" (click)="save()">保存</button>
-    </nz-space-item>
-</nz-space>
-
-<div *ngIf="hero">
-    <h2>{{ hero.name | uppercase }} Details</h2>
-    <div><span>id: </span>{{ hero.id }}</div>
-    <div>
-        <label>name:
-            <input [(ngModel)]="hero.name" placeholder="name">
-        </label>
+    </nz-page-header-extra>
+</nz-page-header>
+<!-- 页头 e -->
+<!-- 主体 s -->
+<div class="container">
+    <div *ngIf="hero">
+        <h2>{{ hero.name | uppercase }}</h2>
+        <div><span>id: </span>{{ hero.id }}</div>
+        <div>
+            <label>name:
+                <input [(ngModel)]="hero.name" placeholder="name">
+            </label>
+        </div>
     </div>
 </div>
+<!-- 主体 e -->

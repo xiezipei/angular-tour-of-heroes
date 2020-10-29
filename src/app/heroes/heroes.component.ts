@@ -3,6 +3,7 @@ import { Hero } from 'src/app/Hero';
 import { HEROES } from 'src/app/mock-heroes';
 import { HeroService } from '../hero.service';
 import { MessageService } from '../message.service';
+import { NzMessageService } from 'ng-zorro-antd/message';
 
 @Component({
     selector: 'app-heroes',
@@ -15,7 +16,8 @@ export class HeroesComponent implements OnInit {
 
     constructor(
         private heroService: HeroService,
-        private messageService: MessageService
+        private messageService: MessageService,
+        private message: NzMessageService
     ) { }
 
     ngOnInit(): void {
@@ -43,6 +45,7 @@ export class HeroesComponent implements OnInit {
         this.isSpinning = true;
         this.heroService.addHero({ name } as Hero).subscribe(hero => {
             this.isSpinning = false;
+            this.message.success(`新增英雄'${name}'成功！`);
             this.heroes.push(hero);
             this.getHeroes();
         });

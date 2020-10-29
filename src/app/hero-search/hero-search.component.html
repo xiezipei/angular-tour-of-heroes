@@ -9,7 +9,7 @@
     <!-- 搜索框 e -->
     <!-- 搜索结果 s -->
     <div class="search-result">
-        <nz-list nzBordered>
+        <nz-list nzBordered="false">
             <nz-list-item *ngFor="let hero of heroes$ | async" routerLink="/heroes/detail/{{ hero.id }}">{{ hero.name }}</nz-list-item>
         </nz-list>
     </div>

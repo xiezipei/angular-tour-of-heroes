@@ -10,8 +10,8 @@ import { MessageService } from '../message.service';
     styleUrls: ['./heroes.component.scss']
 })
 export class HeroesComponent implements OnInit {
-    // selectedHero: Hero;
     heroes: Hero[];
+    isSpinning = false;
 
     constructor(
         private heroService: HeroService,
@@ -23,19 +23,14 @@ export class HeroesComponent implements OnInit {
     }
 
     /**
-     * 获取选中的英雄
-     * @param hero 选中英雄对象
-     */
-    // onSelected(hero: Hero): void {
-    //     this.selectedHero = hero;
-    //     this.messageService.add(`HeroesComponent: Selected hero id=$${hero.id}`);
-    // }
-
-    /**
      * 获取英雄列表
      */
     getHeroes(): void {
-        this.heroService.getHeroes().subscribe(heroes => this.heroes = heroes);
+        this.isSpinning = true;
+        this.heroService.getHeroes().subscribe(heroes => {
+            this.heroes = heroes;
+            this.isSpinning = false;
+        });
     }
 
     /**
@@ -45,7 +40,9 @@ export class HeroesComponent implements OnInit {
     add(name: string): void {
         name = name.trim();
         if (!name) { return; }
+        this.isSpinning = true;
         this.heroService.addHero({ name } as Hero).subscribe(hero => {
+            this.isSpinning = false;
             this.heroes.push(hero);
             this.getHeroes();
         });

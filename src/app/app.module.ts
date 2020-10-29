@@ -29,7 +29,7 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 // const icons: IconDefinition[] = Object.keys(antDesignIcons).map(key => antDesignIcons[key]);
 // 按需引入（推荐）
 import { PieChartOutline, UnorderedListOutline } from '@ant-design/icons-angular/icons';
-const icons: IconDefinition[] = [ PieChartOutline, UnorderedListOutline ];
+const icons: IconDefinition[] = [PieChartOutline, UnorderedListOutline];
 
 // 4. 间距
 import { NzSpaceModule } from 'ng-zorro-antd/space';
@@ -58,6 +58,9 @@ import { NzDividerModule } from 'ng-zorro-antd/divider';
 // 12. 表格
 import { NzTableModule } from 'ng-zorro-antd/table';
 
+// 13. 加载中
+import { NzSpinModule } from 'ng-zorro-antd/spin';
+
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -72,41 +75,42 @@ import { HeroesComponent } from './heroes/heroes.component';
 registerLocaleData(zh);
 
 @NgModule({
-  declarations: [
-    AppComponent,
-    HeroesComponent,
-    HeroDetailComponent,
-    MessagesComponent,
-    DashboardComponent,
-    HeroSearchComponent,
-    HeroSearchComponent,
-  ],
-  imports: [
-    NzButtonModule,
-    NzMenuModule,
-    NzIconModule.forRoot(icons),
-    NzSpaceModule,
-    NzLayoutModule,
-    NzBreadCrumbModule,
-    NzPageHeaderModule,
-    NzCarouselModule,
-    NzInputModule,
-    NzListModule,
-    NzDividerModule,
-    NzTableModule,
-    BrowserModule,
-    AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, { dataEncapsulation: false }
-    ),
-    BrowserAnimationsModule
-  ],
-  providers: [{ provide: NZ_I18N, useValue: zh_CN }],
-  bootstrap: [AppComponent]
+    declarations: [
+        AppComponent,
+        HeroesComponent,
+        HeroDetailComponent,
+        MessagesComponent,
+        DashboardComponent,
+        HeroSearchComponent,
+        HeroSearchComponent,
+    ],
+    imports: [
+        NzButtonModule,
+        NzMenuModule,
+        NzIconModule.forRoot(icons),
+        NzSpaceModule,
+        NzLayoutModule,
+        NzBreadCrumbModule,
+        NzPageHeaderModule,
+        NzCarouselModule,
+        NzInputModule,
+        NzListModule,
+        NzDividerModule,
+        NzTableModule,
+        NzSpinModule,
+        BrowserModule,
+        AppRoutingModule,
+        FormsModule,
+        HttpClientModule,
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+        // and returns simulated server responses.
+        // Remove it when a real server is ready to receive requests.
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, { dataEncapsulation: false }
+        ),
+        BrowserAnimationsModule
+    ],
+    providers: [{ provide: NZ_I18N, useValue: zh_CN }],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

@@ -3,6 +3,9 @@
 <!-- 页头 e -->
 <!-- 主体 s -->
 <div class="container">
+    <!-- 加载中 s -->
+    <nz-spin [nzSpinning]="isSpinning" [nzSize]="'large'"></nz-spin>
+    <!-- 加载中 e -->
     <!-- 新增 s -->
     <nz-space>
         <nz-space-item>
@@ -27,7 +30,7 @@
             <tr *ngFor="let item of heroesTable.data">
                 <td>{{ item.id }}</td>
                 <td>{{ item.name }}</td>
-                <td>
+                <td class="pl0">
                     <a nz-button nzType="link" routerLink="/heroes/detail/{{ item.id }}">查看</a>
                     <a nz-button nzType="link" nzDanger (click)="delete(item)">删除</a>
                 </td>

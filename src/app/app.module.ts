@@ -12,13 +12,13 @@ import zh from '@angular/common/locales/zh';
 import { NZ_I18N } from 'ng-zorro-antd/i18n';
 import { zh_CN } from 'ng-zorro-antd/i18n';
 
-// 按钮
+// 1. 按钮
 import { NzButtonModule } from 'ng-zorro-antd/button';
 
-// 菜单
+// 2. 菜单
 import { NzMenuModule } from 'ng-zorro-antd/menu';
 
-// 引入图标
+// 3. 引入图标
 import { IconDefinition } from '@ant-design/icons-angular';
 import { NzIconModule } from 'ng-zorro-antd/icon';
 // 全部引入（不推荐）
@@ -31,14 +31,17 @@ import { NzIconModule } from 'ng-zorro-antd/icon';
 import { PieChartOutline, UnorderedListOutline } from '@ant-design/icons-angular/icons';
 const icons: IconDefinition[] = [ PieChartOutline, UnorderedListOutline ];
 
-// 间距
+// 4. 间距
 import { NzSpaceModule } from 'ng-zorro-antd/space';
 
-// 布局
+// 5. 布局
 import { NzLayoutModule } from 'ng-zorro-antd/layout';
 
-// 面包屑
+// 6. 面包屑
 import { NzBreadCrumbModule } from 'ng-zorro-antd/breadcrumb';
+
+// 7. 页头
+import { NzPageHeaderModule } from 'ng-zorro-antd/page-header';
 
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
@@ -70,6 +73,7 @@ registerLocaleData(zh);
     NzSpaceModule,
     NzLayoutModule,
     NzBreadCrumbModule,
+    NzPageHeaderModule,
     BrowserModule,
     AppRoutingModule,
     FormsModule,

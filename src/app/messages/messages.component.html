@@ -1,7 +1,13 @@
-<div *ngIf="messageService.messages.length">
-    <h2>日志</h2>
-    <button nz-button nzType="default" nzDanger (click)="messageService.clear()">清空</button>
-    <div class="msg-container">
-        <p *ngFor='let message of messageService.messages'> {{message}} </p>
-    </div>
+<div class="container" *ngIf="messageService.messages.length">
+    <nz-divider></nz-divider>
+    <nz-space nzDirection="vertical">
+        <nz-space-item>
+            <h2>日志 <button nz-button nzType="default" nzDanger (click)="messageService.clear()">清空</button></h2>
+        </nz-space-item>
+        <nz-space-item>
+            <div class="msg-container">
+                <p *ngFor='let message of messageService.messages'> {{message}} </p>
+            </div>
+        </nz-space-item>
+    </nz-space>
 </div>

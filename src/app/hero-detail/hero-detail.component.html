@@ -12,12 +12,12 @@
 <div class="container">
     <div *ngIf="hero">
         <h2>{{ hero.name | uppercase }}</h2>
-        <div><span>id: </span>{{ hero.id }}</div>
-        <div>
-            <label>name:
-                <input [(ngModel)]="hero.name" placeholder="name">
-            </label>
-        </div>
+        <nz-descriptions nzBordered [nzColumn]="1">
+            <nz-descriptions-item nzTitle="序号">{{ hero.id }}</nz-descriptions-item>
+            <nz-descriptions-item nzTitle="名字">
+                <input nz-input [(ngModel)]="hero.name" placeholder="name">
+            </nz-descriptions-item>
+        </nz-descriptions>    
     </div>
 </div>
 <!-- 主体 e -->

@@ -64,6 +64,9 @@ import { NzSpinModule } from 'ng-zorro-antd/spin';
 // 14. 全局提示
 import { NzMessageModule } from 'ng-zorro-antd/message';
 
+// 15. 描述列表
+import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
+
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -102,6 +105,7 @@ registerLocaleData(zh);
         NzTableModule,
         NzSpinModule,
         NzMessageModule,
+        NzDescriptionsModule,
         BrowserModule,
         AppRoutingModule,
         FormsModule,

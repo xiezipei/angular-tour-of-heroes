@@ -11,7 +11,7 @@
 <!-- 主体 s -->
 <div class="container">
     <div *ngIf="hero">
-        <h2>{{ hero.name | uppercase }}</h2>
+        <h2><nz-badge nzStatus="success"></nz-badge>{{ hero.name | uppercase }}</h2>
         <nz-descriptions nzBordered [nzColumn]="1">
             <nz-descriptions-item nzTitle="序号">{{ hero.id }}</nz-descriptions-item>
             <nz-descriptions-item nzTitle="名字">

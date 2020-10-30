@@ -67,6 +67,9 @@ import { NzMessageModule } from 'ng-zorro-antd/message';
 // 15. 描述列表
 import { NzDescriptionsModule } from 'ng-zorro-antd/descriptions';
 
+// 16. 徽标数
+import { NzBadgeModule } from 'ng-zorro-antd/badge';
+
 // 模拟数据服务器
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
 import { InMemoryDataService } from './in-memory-data.service';
@@ -105,6 +108,7 @@ registerLocaleData(zh);
         NzTableModule,
         NzSpinModule,
         NzMessageModule,
+        NzBadgeModule,
         NzDescriptionsModule,
         BrowserModule,
         AppRoutingModule,
